@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>netstandard2.0;net7.0</TargetFrameworks>
+		<LangVersion>Latest</LangVersion>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Api\Controllers\MockTest\createFingerPrintControllerTest.cs" />
+	  <Compile Remove="Api\Controllers\MockTest\getAUJobDetailsControllerTest.cs" />
+	  <Compile Remove="Api\Controllers\MockTest\getAUJobSummaryControllerTest.cs" />
+	  <Compile Remove="Api\Controllers\MockTest\getTransactionListForCustomerControllerTest.cs" />
+	  <Compile Remove="Api\Controllers\MockTest\transactionResponseEmvControllerTest.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\AuthorizeNet\AuthorizeNet.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Folder Include="Properties\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="NMock3" Version="3.5.44" />
+	  <PackageReference Include="NUnit" Version="2.7.1" />
+	  <PackageReference Include="NUnitTestAdapter" Version="2.3.0" />
+	  <PackageReference Include="NUnitTestAdapter.WithFramework" Version="2.0.0" />
+	</ItemGroup>
+</Project>
