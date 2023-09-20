@@ -130,12 +130,12 @@ namespace AuthorizeNet
             String stringValue = null;
             String propValue = null;
 
-            lock(mutex) {
-                if (!string.IsNullOrEmpty(ConfigurationManager.AppSettings.Get(propertyName)))
-                {
-                    propValue = ConfigurationManager.AppSettings.Get(propertyName);
-                }
-            }
+            //lock(mutex) {
+            //    if (!string.IsNullOrEmpty(ConfigurationManager.AppSettings.Get(propertyName)))
+            //    {
+            //        propValue = ConfigurationManager.AppSettings.Get(propertyName);
+            //    }
+            //}
 
             var envValue = System.Environment.GetEnvironmentVariable(propertyName);
             if ( null != propValue && propValue.Trim().Length > 0 )
